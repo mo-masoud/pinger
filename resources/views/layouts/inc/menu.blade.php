@@ -64,6 +64,13 @@
                         <span key="t-contacts">@lang('Connecting line types')</span>
                     </a>
                 </li>
+
+                <li>
+                    <a href="{{ route('routers.index') }}" class="waves-effect">
+                        <i class="bx bxs-user-pin"></i>
+                        <span key="t-contacts">@lang('Routers types')</span>
+                    </a>
+                </li>
             </ul>
         </div>
         <!-- Sidebar -->

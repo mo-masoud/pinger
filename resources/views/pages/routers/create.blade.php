@@ -10,7 +10,7 @@
             <div class="card">
                 <div class="card-body">
 
-                    <form action="{{ route('networks.store') }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('routers.store') }}" method="post" enctype="multipart/form-data">
 
                         <div class="form-floating mb-3">
                             <input type="text" class="form-control" id="floatingNameInput" name="name"
@@ -19,6 +19,17 @@
                             @error('name')
                                 <span style="color:red;">
                                     {{ $errors->first('name') }}
+                                </span>
+                            @enderror
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="floatingNumberInput" name="number"
+                                placeholder="@lang('Number')" />
+                            <label for="floatingNumberInput">@lang('Number')</label>
+                            @error('number')
+                                <span style="color:red;">
+                                    {{ $errors->first('number') }}
                                 </span>
                             @enderror
                         </div>

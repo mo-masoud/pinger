@@ -43,4 +43,8 @@ Route::middleware(['auth'])->group(function () {
 
     // Branch Level
     Route::resource('/line-types', \App\Http\Controllers\LineType\LineTypeController::class);
+
+
+    // Routers
+    Route::resource('/routers', \App\Http\Controllers\Router\RouterController::class);
 });

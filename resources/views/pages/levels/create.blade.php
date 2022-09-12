@@ -16,7 +16,7 @@
                             <input type="text" class="form-control" id="floatingNameInput" name="name"
                                 placeholder="@lang('Name')" />
                             <label for="floatingNameInput">@lang('Name')</label>
-                            @error('commands')
+                            @error('name')
                                 <span style="color:red;">
                                     {{ $errors->first('name') }}
                                 </span>
