@@ -13,6 +13,16 @@
             </div>
             <button type="submit" class="btn btn-success">@lang('Search')</button>
         </form>
+
+        <form method="POST" enctype="multipart/form-data" action="{{ route('branches.import') }}"
+            style="display: flex; justify-content: space-between; gap: 10px">
+            @csrf
+            <div style="height: 40px;">
+                <input type="file" class="form-control" name="file" />
+            </div>
+            <button type="submit" class="btn btn-success">@lang('Import')</button>
+        </form>
+
         <a type="button" class="btn btn-primary" href="{{ route('branches.create') }}">@lang('Create new branche')</a>
     </div>
 

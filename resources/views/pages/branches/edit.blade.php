@@ -370,7 +370,7 @@
                                     <div class="form-check">
                                         <label class="form-check-label">
                                             <input class="form-check-input" type="checkbox" name="working_days[]"
-                                                value="Sat" @if (in_array('Sat', old('working_days', $branch->working_days))) checked @endif>
+                                                value="Sat" @if (is_array($branch->working_days) && in_array('Sat', old('working_days', $branch->working_days))) checked @endif>
                                             Saturday
                                         </label>
                                     </div>
@@ -379,7 +379,7 @@
                                     <div class="form-check">
                                         <label class="form-check-label">
                                             <input class="form-check-input" type="checkbox" name="working_days[]"
-                                                value="Sun" @if (in_array('Sun', old('working_days', $branch->working_days))) checked @endif>
+                                                value="Sun" @if (is_array($branch->working_days) && in_array('Sun', old('working_days', $branch->working_days))) checked @endif>
                                             Sunday
                                         </label>
                                     </div>
@@ -388,7 +388,7 @@
                                     <div class="form-check">
                                         <label class="form-check-label">
                                             <input class="form-check-input" type="checkbox" name="working_days[]"
-                                                value="Mon" @if (in_array('Mon', old('working_days', $branch->working_days))) checked @endif>
+                                                value="Mon" @if (is_array($branch->working_days) && in_array('Mon', old('working_days', $branch->working_days))) checked @endif>
                                             Monday
                                         </label>
                                     </div>
@@ -397,7 +397,7 @@
                                     <div class="form-check">
                                         <label class="form-check-label">
                                             <input class="form-check-input" type="checkbox" name="working_days[]"
-                                                value="Tue" @if (in_array('Tue', old('working_days', $branch->working_days))) checked @endif>
+                                                value="Tue" @if (is_array($branch->working_days) && in_array('Tue', old('working_days', $branch->working_days))) checked @endif>
                                             Tuesday
                                         </label>
                                     </div>
@@ -406,7 +406,7 @@
                                     <div class="form-check">
                                         <label class="form-check-label">
                                             <input class="form-check-input" type="checkbox" name="working_days[]"
-                                                value="Wed" @if (in_array('Wed', old('working_days', $branch->working_days))) checked @endif>
+                                                value="Wed" @if (is_array($branch->working_days) && in_array('Wed', old('working_days', $branch->working_days))) checked @endif>
                                             Wednesday
                                         </label>
                                     </div>
@@ -415,7 +415,7 @@
                                     <div class="form-check">
                                         <label class="form-check-label">
                                             <input class="form-check-input" type="checkbox" name="working_days[]"
-                                                value="Thu" @if (in_array('The', old('working_days', $branch->working_days))) checked @endif>
+                                                value="Thu" @if (is_array($branch->working_days) && in_array('The', old('working_days', $branch->working_days))) checked @endif>
                                             Thursday
                                         </label>
                                     </div>
@@ -424,7 +424,7 @@
                                     <div class="form-check">
                                         <label class="form-check-label">
                                             <input class="form-check-input" type="checkbox" name="working_days[]"
-                                                value="Fri" @if (in_array('Fri', old('working_days', $branch->working_days))) checked @endif>
+                                                value="Fri" @if (is_array($branch->working_days) && in_array('Fri', old('working_days', $branch->working_days))) checked @endif>
                                             Friday
                                         </label>
                                     </div>
