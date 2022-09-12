@@ -43,6 +43,13 @@
                         <span key="t-contacts">@lang('Network Providers')</span>
                     </a>
                 </li>
+
+                <li>
+                    <a href="{{ route('projects.index') }}" class="waves-effect">
+                        <i class="bx bxs-user-pin"></i>
+                        <span key="t-contacts">@lang('Projects')</span>
+                    </a>
+                </li>
             </ul>
         </div>
         <!-- Sidebar -->

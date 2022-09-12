@@ -34,4 +34,7 @@ Route::middleware(['auth'])->group(function () {
 
     // Network
     Route::resource('/networks', \App\Http\Controllers\Networks\NetworkController::class);
+
+    // Projects
+    Route::resource('/projects', \App\Http\Controllers\Project\ProjectController::class);
 });
