@@ -19,5 +19,6 @@ class DatabaseSeeder extends Seeder
         $this->call(\Database\Seeders\NetworkSeeder::class);
         $this->call(\Database\Seeders\ProjectSeeder::class);
         $this->call(\Database\Seeders\BranchLevelSeeder::class);
+        $this->call(\Database\Seeders\LineTypeSeeder::class);
     }
 }

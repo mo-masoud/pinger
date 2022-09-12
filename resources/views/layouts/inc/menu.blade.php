@@ -57,6 +57,13 @@
                         <span key="t-contacts">@lang('Branch Levels')</span>
                     </a>
                 </li>
+
+                <li>
+                    <a href="{{ route('line-types.index') }}" class="waves-effect">
+                        <i class="bx bxs-user-pin"></i>
+                        <span key="t-contacts">@lang('Connecting line types')</span>
+                    </a>
+                </li>
             </ul>
         </div>
         <!-- Sidebar -->
