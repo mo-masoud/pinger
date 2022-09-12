@@ -4,7 +4,7 @@
     @includeIf('layouts.inc.breadcrumb')
 
     <div style=" margin-bottom: 14px; position: relative; text-align: right; ">
-        <a type="button" class="btn btn-primary" href="{{ route('projects.create') }}">@lang('Create new project')</a>
+        <a type="button" class="btn btn-primary" href="{{ route('levels.create') }}">@lang('Create new branch level')</a>
     </div>
 
     @if ($lists->count() > 0)
@@ -25,7 +25,7 @@
                                 @foreach ($lists as $list)
                                     <tr>
                                         <td>
-                                            <a href="{{ route('projects.edit', $list->id) }}">
+                                            <a href="{{ route('levels.edit', $list->id) }}">
                                                 {{ $list->name ?? '' }}
                                             </a>
                                         </td>
@@ -34,10 +34,10 @@
                                         </td>
                                         <td style="display: inline-flex;">
                                             <a style="margin-right: 5px;" class="btn btn-outline-secondary btn-sm edit"
-                                                href="{{ route('projects.edit', $list->id) }}">
+                                                href="{{ route('levels.edit', $list->id) }}">
                                                 <i class="bx bx-pencil"></i>
                                             </a>
-                                            {!! action_table_delete(route('projects.destroy', $list->id), $list->id) !!}
+                                            {!! action_table_delete(route('levels.destroy', $list->id), $list->id) !!}
                                         </td>
                                     </tr>
                                 @endforeach

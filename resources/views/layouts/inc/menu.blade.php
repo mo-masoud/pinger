@@ -50,6 +50,13 @@
                         <span key="t-contacts">@lang('Projects')</span>
                     </a>
                 </li>
+
+                <li>
+                    <a href="{{ route('levels.index') }}" class="waves-effect">
+                        <i class="bx bxs-user-pin"></i>
+                        <span key="t-contacts">@lang('Branch Levels')</span>
+                    </a>
+                </li>
             </ul>
         </div>
         <!-- Sidebar -->

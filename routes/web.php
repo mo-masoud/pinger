@@ -37,4 +37,7 @@ Route::middleware(['auth'])->group(function () {
 
     // Projects
     Route::resource('/projects', \App\Http\Controllers\Project\ProjectController::class);
+
+    // Branch Level
+    Route::resource('/levels', \App\Http\Controllers\Level\LevelController::class);
 });
