@@ -35,6 +35,14 @@
                     </a>
                 </li>
 
+                <li class="menu-title" key="t-menu">@lang('Lookups')</li>
+
+                <li>
+                    <a href="{{ route('networks.index') }}" class="waves-effect">
+                        <i class="bx bxs-user-pin"></i>
+                        <span key="t-contacts">@lang('Network Providers')</span>
+                    </a>
+                </li>
             </ul>
         </div>
         <!-- Sidebar -->

@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::get('/login', [\App\Http\Controllers\Auth\AuthController::class, 'index'])->name('login');
 Route::post('/login', [\App\Http\Controllers\Auth\AuthController::class, 'checkAuth'])->name('login.checkAuth');
 
@@ -24,10 +25,13 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/profile', [\App\Http\Controllers\Profile\ProfileController::class, 'index'])->name("profile.index");
     Route::post('/profile', [\App\Http\Controllers\Profile\ProfileController::class, 'store'])->name("profile.store");
     // Users
-    Route::resource('/users',\App\Http\Controllers\Users\UsersController::class);
+    Route::resource('/users', \App\Http\Controllers\Users\UsersController::class);
     // Terminal
-    Route::resource('/terminals',\App\Http\Controllers\Terminals\TerminalsController::class);
+    Route::resource('/terminals', \App\Http\Controllers\Terminals\TerminalsController::class);
     // Branches
-    Route::get('/branches/run/{code}',[\App\Http\Controllers\Branches\BranchesController::class,"code"]);
-    Route::resource('/branches',\App\Http\Controllers\Branches\BranchesController::class);
+    Route::get('/branches/run/{code}', [\App\Http\Controllers\Branches\BranchesController::class, "code"]);
+    Route::resource('/branches', \App\Http\Controllers\Branches\BranchesController::class);
+
+    // Network
+    Route::resource('/networks', \App\Http\Controllers\Networks\NetworkController::class);
 });
