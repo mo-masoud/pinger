@@ -13,7 +13,8 @@ class UpdateBranchesRequest extends FormRequest
      *
      * @return bool
      */
-    public function authorize() {
+    public function authorize()
+    {
         return true;
     }
 
@@ -22,14 +23,8 @@ class UpdateBranchesRequest extends FormRequest
      *
      * @return array
      */
-    public function rules() {
-        return [
-            "name"      => 'required|string|max:150',
-            "lan_ip"        => 'required|string|max:150',
-            "wan_ip"        => 'required|string|max:150',
-            "tunnel_ip"     => 'required|string|max:150',
-            "ips"       => 'required|string|max:150',
-            'isp'       => 'required|string|max:150',
-        ];
+    public function rules()
+    {
+        return [];
     }
 }

@@ -9,6 +9,11 @@ use App\Http\Requests\Branches\UpdateBranchesRequest;
 use Illuminate\Support\Facades\Hash;
 use Carbon\Carbon;
 use App\Models\Branch;
+use App\Models\BranchLevel;
+use App\Models\LineType;
+use App\Models\Network;
+use App\Models\Project;
+use App\Models\Router;
 use App\Models\Terminal;
 
 class BranchesController extends Controller
@@ -25,7 +30,22 @@ class BranchesController extends Controller
                 ]
             ],
         ];
-        $lists = Branch::orderBy('id', 'desc')->paginate();
+        $lists = Branch::when(request('keyword'), function ($query) {
+            $keyword = request('keyword');
+            $query->where('name->en', 'like', '%' . $keyword . '%')
+                ->orWhere('name->ar', 'like', '%' . $keyword . '%')
+                ->orWhere('lan_ip', 'like', '%' . $keyword . '%')
+                ->orWhere('wan_ip', 'like', '%' . $keyword . '%')
+                ->orWhere('tunnel_ip', 'like', '%' . $keyword . '%')
+                ->orWhere('main_order_id', 'like', '%' . $keyword . '%')
+                ->orWhere('backup_order_id', 'like', '%' . $keyword . '%')
+                ->orWhere('area', 'like', '%' . $keyword . '%')
+                ->orWhere('sector', 'like', '%' . $keyword . '%')
+                ->orWhere('address', 'like', '%' . $keyword . '%')
+                ->orWhere('phone', 'like', '%' . $keyword . '%')
+                ->orWhere('phone', 'like', '%' . $keyword . '%')
+                ->orWhere('financial_code', 'like', '%' . $keyword . '%');
+        })->orderBy('id', 'desc')->paginate();
         return view('pages.branches.index', [
             'breadcrumb' => $breadcrumb,
             'lists'     => $lists,
@@ -55,13 +75,20 @@ class BranchesController extends Controller
         ];
 
         return view('pages.branches.create', [
-            'breadcrumb' => $breadcrumb
+            'breadcrumb' => $breadcrumb,
+            'networks' => Network::all(),
+            'projects' => Project::all(),
+            'levels' => BranchLevel::all(),
+            'lineTypes' => LineType::all(),
+            'routers' => Router::all(),
         ]);
     }
 
     public function store(CreateBranchesRequest $request)
     {
-        Branch::create($request->all());
+        $data = $request->all();
+        $data['user_id'] = auth()->id();
+        Branch::create($data);
         return redirect()->route('branches.index')->with('success', __("This row has been created."));
     }
 
@@ -105,6 +132,11 @@ class BranchesController extends Controller
         return view('pages.branches.edit', [
             'breadcrumb'    =>  $breadcrumb,
             'branch'         =>  $branch,
+            'networks' => Network::all(),
+            'projects' => Project::all(),
+            'levels' => BranchLevel::all(),
+            'lineTypes' => LineType::all(),
+            'routers' => Router::all(),
         ]);
     }
 
